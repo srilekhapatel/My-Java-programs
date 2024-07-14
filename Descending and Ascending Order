@@ -51,10 +51,11 @@ class TestClass {
 				}
 			}
 		}
-		for(int k=n-1;k>=n/2;k--){ 
+		int mid=n/2;
+		for(int k=n-1;k>=mid;k--){ 
 			System.out.print(a[k]+" ");
 		}
-		for(int i=0;i<n/2;i++){
+		for(int i=0;i<mid;i++){
 			System.out.print(a[i]+" ");
 		}
 	}
