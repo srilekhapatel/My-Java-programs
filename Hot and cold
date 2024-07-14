@@ -1,0 +1,51 @@
+Hot and Cold
+Implement a program, it reads integers from the input device (until it gets -ve number)
+and put them into array. We define a hot number as any number whose last digit is 2,
+and cold number as any number that is less than 50. You have to modify the program such
+thatif it is hot number replace by -1if it is cold number replace by -5if it is both hot
+and cold replace by -6 else keep old number
+Sample input:
+4
+92 61 13 42
+
+Sample output:
+-1 61 -5 -6
+
+Explanation
+92 last digit is 2 and >50 that's why -1
+61 last digit not equal to 2 also >50 that's why 61
+13 last digit not equal to 2 but <50 that's why -5
+42 last digit is 2 and <50 that's why -6
+
+SOLUTION:
+============
+import java.util.Scanner;
+class TestClass {
+	public static void main(String args() ) throws Exception {
+		Scanner sc=new Scanner(System.in);
+		int n=sc.nextInt();
+		int[] a=new int[n];
+		for(int i=0;i<n;i++){
+			a[i]=sc.nextInt();
+		}
+		for(int i=0;i<n;i++){
+			int rem=0;
+			rem=a[i]%10;
+			if(rem==2 && a[i]>50){
+				a[i]=-1;
+			}
+			else if(rem!=2 && a[i]>50){
+				a[i]=a[i];
+			}
+			else if(rem==2 && a[i]<50){ 
+				a[i]=-6;
+			}
+			else{
+				a[i]=-5;
+			}
+		}
+		for(int j=0;j<n;j++){
+			System.out.print(a[j]+" ");
+		}
+	}
+}
