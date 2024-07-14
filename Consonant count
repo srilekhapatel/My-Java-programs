@@ -1,0 +1,51 @@
+A child care NGO:
+===================
+A childcare NGO WeCare can receive N number of applications every year. 
+Out of these applications, some are from volunteers who wish to work for
+the NGO full time and some applications are for interns. Each application
+received by the NGO has an application ID from a-z and A-Z. The volunteer
+applications are (a,e,i,o,u, A,E,I,O, U) while the rest are the intern
+application IDs The NGO wishes to know the count of intern applications in
+the given list of N currently received application IDs.
+Write an algorithm to help the NGO determine the total count of intern application IDs.
+
+Sample input:
+6
+avikel
+
+Sample Output:
+3
+
+Explanation:
+Input:
+The first line of the input consists of an integer numOfapplications representing the number of currently received applications (N).
+The second line consists of N space-separated characters-applicationID-1, applicationID-2, and so on representing the application IDs of the N applications.
+  
+Output:
+Print an integer representing the number of intern application ID's among the given applications.
+
+Solution:
+===============
+import java.util.Scanner;
+import java.lang.String;
+class TestClass {
+	public static void main(String args() ) throws Exception {
+		Scanner sc=new Scanner(System.in);
+		int n=sc.nextInt();
+		String str=sc.next();
+		str=str.toLowerCase();
+		int vcount=0,ccount=0;
+		for(int i=0;i<str.length();i++){
+			char ch=str.charAt(i);
+			if(ch=='a' || ch=='e' || ch=='i' || ch=='o' || ch=='u' ||
+			ch== 'A' || ch=='E' || ch=='I' || ch=='0' || ch==''){
+				vcount++;
+			}
+			else{
+				ccount++;
+			}
+		}
+		System.out.print(ccount);
+	}
+}
+	
