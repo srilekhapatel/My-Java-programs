@@ -1,0 +1,61 @@
+Descending and Ascending Order:
+===================================
+Descending and Ascending Order
+Write a program to read n elements into an array and print first half
+in descending order and second half in ascending order
+
+Sample input:
+6
+13 2 4 15 12 10
+
+Sample output:
+15 13 12 2 4 10
+
+Explanation:
+In the above test case
+total 6 elements were given
+first half must contain 3 and next half must contain 3 elements
+based on the given input
+the first half must contain 3 elements which are sorted in descending order
+and the next half must contain 3 elements which are sorted in ascending order
+
+Note:-
+if the array contains odd number of elements
+you need to consider the mid element into first half.
+Ex:-
+input:
+5
+23 12 89 65 21
+output:
+89 65 23 12 21
+here, you can see fist 3 elements are in descending order.
+next 2 elements are in ascending order
+
+SOLUTION:
+==============
+import java.util.*;
+class TestClass {
+	public static void main(String args() ) throws Exception {
+		Scanner sc=new Scanner(System.in);
+		int n=sc.nextInt();
+		int[] a=new int[n];
+		for(int i=0;i<n;i++){
+			a[i]=sc.nextInt();
+		}
+		for(int i=0;i<n-1;i++){
+			for(int j=1;j<n;j++){
+				if(a[j-1]>a[j]){
+					int temp=a[j];
+					a[j]=a[j-1];
+					a[j-1]=temp;
+				}
+			}
+		}
+		for(int k=n-1;k>=n/2;k--){ 
+			System.out.print(a[k]+" ");
+		}
+		for(int i=0;i<n/2;i++){
+			System.out.print(a[i]+" ");
+		}
+	}
+}
