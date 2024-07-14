@@ -1,0 +1,41 @@
+Odd Even Index:
+===================
+Given a String, print all the letters present at odd index followed by the letters present at even index.
+
+Input Format:
+Input contains a string - S.
+
+Constraints:
+1 <= len(S) <= 100
+
+Output Format:
+Print letters present at odd index followed by the letters present at even index.
+
+Sample input:
+afdg5tg
+
+Sample Output:
+fgtad5g
+
+SOLUTION:
+=============
+import java.util.Scanner;
+import java.lang.String;
+class TestClass {
+	public static void main(String[] args) throws Exception {
+		Scanner sc=new Scanner(System.in);
+		String str=sc.nextLine();
+		int n=str.length();
+		char[] ca=str.toCharArray();
+		for(int i=0;i<n;i++){
+			if(i%2!=0){
+				System.out.print(ca[i]);
+			}
+		}
+		for(int i=0;i<n;i++){
+			if(i%2==0){
+				System.out.print(ca[i]);
+			}
+		}
+	}
+}
