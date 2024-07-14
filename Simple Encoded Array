@@ -1,0 +1,64 @@
+Simple Encoded Array:
+=========================
+Maya has stored few confidential numbers in an array(array of int).
+To ensure that others do not find the numbers easly, she has applied
+a simple encoding.
+
+Encoding used: Each array element has been substituted with a value 
+that is the sum of it's original value and its succeeding element's value
+
+l.e. arr[i]= original value of arr[i] original value of ani+ 1
+
+ex: arr[0] = original value of arr[0] + original value of arr[1]
+
+Also note that value of last element Le arflast index) remains unchanged.
+
+For example,
+If the encoded array is (7, 6, 8, 16, 12, 3)
+The Original array should have been (2, 5, 1, 7, 9,3)
+
+Provided the encoded array, you are expected to find the
+a. First number (value in index O) in the original array
+b. Sum of all numbers in the original array
+
+Input: n. length of array and integer array
+Output: integer at index O of original array, sum of all the elements 
+of original array.
+
+Sample input:
+6
+7 6 8 16 12 3
+
+Sample output:
+2
+27
+
+Explanation:
+If the encoded array is [7, 6, 8, 16, 12, 3)
+The Original array should have been (2, 5,1,7,9,3)
+Element at index(0) is 2
+sum of all the elements in the original array 2+5+1+7+9+3 = 27
+
+SOLUTION:
+============
+import java.util.Scanner;
+class TestClass {
+	public static void main(String args() ) throws Exception {
+		Scanner sc=new Scanner(System.in);
+		int n=sc.nextInt();
+		int[] a=new int[n];
+		for(int i=0;i<n;i++){
+			a[i]=sc.nextInt();
+		}
+		int[] res=new int[n];
+		res[res.length-1]=a[n-1];
+		for(int i=n-1;i>0;i--){
+			res[i-1]=a[i-1]-res[i];
+		}
+		int sum=0;
+		for(int item:res){
+			sum+=item;
+		}
+		System.out.print(res[0]+" "+sum);
+	}
+}
