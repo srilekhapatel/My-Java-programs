@@ -1,0 +1,40 @@
+Sum of the array:
+==================
+Given an array nums of length n. Find the sum of array elements.
+
+Input Format:
+First line contains an integer n representing number of elements.
+Next line contains n integers denoting array elements.
+
+Constraints:
+1 <= nums.length <= 1000
+10^6 <= nums[i] <= 10^6
+
+Output Format:
+An integer representing sum array of the given array
+
+Sample input:
+4
+1 2 3 4
+
+Sample Output:
+10
+
+SOLUTION:
+============
+import java.util.Scanner;
+class TestClass {
+	public static void main(String args() ) throws Exception {
+		Scanner sc= new Scanner(System.in);
+		int n=sc.nextInt();
+		int[] a=new int[n];
+		for(int i=0;i<n;i++){
+			a[i]=sc.nextInt();
+		}
+		int sum=0;
+		for(int i=0;i<n;i++){
+			sum+=a[i];
+		}
+		System.out.print(sum);
+	}
+}
