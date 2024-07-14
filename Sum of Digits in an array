@@ -1,0 +1,36 @@
+Sum of Digits in an array:
+=================================
+A data company wishes to store its data files on the server.
+They N files. Each file has a particular size. the server stores
+the files in bucket list. The bucket ID is calculated as the sum of the digits of its file size.
+Write an algorithm to find the bucketIDs where the files are stored.
+Sample input:
+4 
+43 345 20 987
+
+Sample output:
+7 12 2 24
+
+SOLUTION:
+===============
+import java.util.Scanner;
+class TestClass {
+	public static void main(String args() ) throws Exception {
+		Scanner sc=new Scanner(System.in);
+		int n=sc.nextInt();
+		int[] a=new int[n];
+		for(int i=0;i<n;i++){
+			a[i]=sc.nextInt();
+		}
+		int id;
+		for(int i=0;i<n;i++){
+			id=0;
+			while(a[i]>0){
+				int temp=a[i]%10;
+				id+=temp;
+				a[i]/=10;
+			}
+			System.out.print(id+" ");
+		}
+	}
+}
